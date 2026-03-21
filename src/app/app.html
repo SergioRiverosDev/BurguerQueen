@@ -1,2 +1,21 @@
-<div class="text-primary">red</div>
-<router-outlet />
+<div class="container-fluid h-100 app">
+
+    <div class="row bg-primary app_header">
+        <div class="col-12">
+            <app-header></app-header>
+        </div>
+    </div>
+
+    <div class="row app_content">
+        <div class="col-12">
+            <router-outlet />
+        </div>
+    </div>
+
+    <div class="row bg-primary app_footer">
+        <div class="col-12">
+            <app-footer></app-footer>
+        </div>
+    </div>
+
+</div>
