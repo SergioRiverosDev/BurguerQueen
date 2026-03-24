@@ -1,1 +1,11 @@
-<p>header works!</p>
+<div class="row ">
+    <div class="col-2">
+        <img [src]="'/img/flags/logo_app.png'" [alt]="'logo_app'" width="55px" height="55px" routerLink="/categories">
+    </div>
+    <div class="col-10 d-flex justify-content-end align-items-center">
+        @for (language of languages; track $index) {
+            <img [src]="'/img/flags/'+language+'.png'" [alt]="language" width="32px" height="32px" class="me-2" (click)="changeLenguage(language)">
+        }
+        <mat-icon aria-hidden="false" matBadge="0" aria-label="Shopping cart" fontIcon="shopping_cart" routerLink="/pay-order" class="mx-3"></mat-icon>
+    </div>
+</div>
