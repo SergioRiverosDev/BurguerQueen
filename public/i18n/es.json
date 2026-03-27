@@ -51,7 +51,7 @@
     "label.success": "Éxito",
     "label.back": "Volver",
     "label.drinks": "Bebidas",
-    "label.footer": "Burguer queen © {{year}} Todos los derechos reservados",
+    "label.footer": "{{year}} Construido por ",
     "label.name": "Nombre",
     "label.quantity": "Cantidad",
     "label.total": "Total",

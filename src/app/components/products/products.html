@@ -1,1 +1,29 @@
-<p>products works!</p>
+<div class="row pt-3">
+    <div class="col-12">
+
+
+        <div class="row justify-content-center">
+            @if (products$ |async; as products) {
+                @for (product of products; track product._id) {
+                    <div class="col-lg-2 col-md-4 col-6 p-3 d-flex card-style">
+    
+                    <mat-card class="bg-white text-center w-100 h-100 " appearance="outlined" [routerLink]="['/product', product._id]">
+
+                        <img mat-card-image class="p-4 img-card" [src]="'/img/products/'+product.img"
+                            [alt]="product.name">
+
+                        <mat-card-content class="bg-primary rounded-bottom text-white p-2 mt-auto">
+                            <h6 class=" text-center">
+                                {{ product.name | translate }}
+                            </h6>
+                            <h5 class="bg-white text-primary rounded align-content-center pt-1"> {{product.price}} €</h5>
+                        </mat-card-content>
+
+                    </mat-card>
+    
+                </div>
+                }
+            } 
+        </div>
+    </div>
+</div>

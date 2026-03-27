@@ -51,7 +51,7 @@
     "label.success": "Success",
     "label.back": "Back",
     "label.drinks": "Drinks",
-    "label.footer": "Burger Queen © {{year}} All rights reserved",
+    "label.footer": "{{year}} Built by ",
     "label.name": "Name",
     "label.quantity": "Quantity",
     "label.total": "Total",
