@@ -17,7 +17,7 @@ export interface ProductExtraModel{
 
 export interface ProductsExtraBlocks{
 
-    nombre:string,
+    name:string,
     img:string,
     options: ProductsExtraOptions[]
 
@@ -25,7 +25,7 @@ export interface ProductsExtraBlocks{
 
 export interface ProductsExtraOptions{
 
-    nombre?:string,
+    name?:string,
     price:number,
     activate:boolean
 }

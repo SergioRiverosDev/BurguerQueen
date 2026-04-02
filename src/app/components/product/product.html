@@ -1,55 +1,111 @@
 <div class="row pt-3">
     <div class="col-12">
-
-        <div class="row justify-content-center">
-            @if (product$ |async; as product) {
+        <div class="row justify-content-center"> @if (product$ |async; as product) {
 
             <div class="row text-center">
-                <h3 class="mb-3">{{product.name |translate}}</h3>
+                <h3 class="mb-3 text-primary">{{product.name |translate}}</h3>
                 <mat-divider></mat-divider>
             </div>
 
-            <div class="col-12 mt-3">
-                <a class="btn btn-outline-primary mb-2" style="width: 100px; text-decoration: none; position: absolute;" (click)="goBack()">
-                    <ion-icon class="pt-1" name="arrow-back-outline"></ion-icon>
-                    {{'label.back'|translate }}
+            <div class="col-12 mt-3" [ngClass]="{'sticky-lg-top':product.extras}">
+                <a class="btn btn-outline-primary mb-2 d-none d-lg-block mt-3"
+                    style="width: 100px; text-decoration: none; position: absolute;" (click)="goBack()">
+                    <ion-icon class="pt-1" name="arrow-back-outline"></ion-icon>{{'label.back'|translate }}
                 </a>
             </div>
 
-            <div class="col-lg-2 col-md-4 col-6 p-3 d-flex card-style">
+            <div class="row justify-content-center align-items-start">
+                <div class="col-lg-2 col-md-4 col-6 p-3 d-flex flex-column"
+                    [ngClass]="{'sticky-lg-top':product.extras}" style="width: 250px;">
+                    <mat-card class="bg-white text-center w-100 h-100 card-style mt-2" appearance="outlined" >
+                        <img mat-card-image class="p-4 img-card" [src]="'/img/products/'+product.img"
+                            [alt]="product.name">
+                        <mat-card-content class="bg-primary rounded-bottom text-white p-2 mt-auto">
+                            <h5 class="bg-white text-primary rounded align-content-center pt-1">
+                                {{product | calculateTotalPrice: quantitySiganl()}} €
+                            </h5>
+                        </mat-card-content>
+                    </mat-card>
 
-                <mat-card class="bg-white text-center w-100 h-100 " appearance="outlined">
+                    <div class="col-12 d-flex align-items-center justify-content-center my-2">
+                        <button class="btn btn-primary px-4" (click)="oneLessProduct()"
+                            [disabled]="quantitySiganl()<=1">
+                            <ion-icon class="mt-2" name="remove-outline"></ion-icon>
+                        </button>
+                        <h3 class="align-content-center mt-1 mx-3 border rounded p-2 px-3">{{quantitySiganl()}}</h3>
+                        <button class="btn btn-primary px-4" (click)="oneMoreProduct()">
+                            <ion-icon class="mt-2" name="add-outline"></ion-icon>
+                        </button>
+                    </div>
 
-                    <img mat-card-image class="p-4 img-card" [src]="'/img/products/'+product.img" [alt]="product.name">
+                    <div class="col-12 d-flex flex-column align-items-center">
+                        <button class="btn btn-primary mb-2 " style="width: 215px;" (click)="addProduct(product)">
+                            <ion-icon class="pt-1" name="bag-add-outline"></ion-icon> {{'label.add.product'|translate }}
+                        </button>
+                    </div>
 
-                    <mat-card-content class="bg-primary rounded-bottom text-white p-2 mt-auto">
-                        <!--                             <h6 class=" text-center">
-                                {{ product.name | translate }}
-                            </h6> -->
-                        <h5 class="bg-white text-primary rounded align-content-center pt-1"> {{product.price}} €</h5>
-                    </mat-card-content>
+                </div>
 
-                </mat-card>
+                @if (product.extras){
+                <div class="col-md-8 col-12">
 
-            </div>
+                    <div class="row ">
+                        <div class="col-12">
+                            @for (extra of product.extras; track $index) {
 
-            <div class="col-12 d-flex align-items-center justify-content-center mb-2">
-                <button class="btn btn-primary px-4"><ion-icon class="mt-2" name="remove-outline"></ion-icon></button>
-                <h3 class="align-content-center mt-1 mx-3 border rounded p-2 px-3">1</h3>
-                <button class="btn btn-primary px-4"><ion-icon class="mt-2" name="add-outline"></ion-icon></button>
-            </div>
+                                @if (extra.label) {
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h3 class="text-center my-3">{{extra.label|translate}}</h3>
+                                        </div>
+                                    </div>
+                                }
 
-            <div class="col-12 d-flex flex-column align-items-center">
-                <button class="btn btn-primary mb-2 " style="width: 215px;" (click)="addProduct(product)">
-                    <ion-icon class="pt-1" name="bag-add-outline"></ion-icon>
-                    {{'label.add.product'|translate }}
-                </button>
+                                <div class="row">
+                                    @for (block of extra.blocks; track $index) {
+                                        <div class="col-lg-2 col-md-6 col-6 mb-2">
+                                            <mat-card class="bg-white text-center h-100  p-1">
+                                                <img mat-card-image class="p-3 " [src]="'/img/products/'+ block.img" [alt]="block.name">
+                                                <mat-card-content>
+                                                     <span class="d-block">{{block.name|translate}}</span>
 
+                                                     @if (block.options.length == 1) {
+                                                        
+                                                        <span class="d-block fw-bold">{{block.options[0].activate ? block.options[0].price : '0'}} €</span>
+                                                        <mat-checkbox  [(ngModel)]="block.options[0].activate" name="activate_{{$index}}">   
+                                                                                                                 </mat-checkbox>
+                                                     }@else if (block.options.length>1) {
+                                                        @let extraSelected = block.options|extraSelected;
+                                                        <span class="d-block fw-bold">{{extraSelected?.price}} €</span>
+                                                        <mat-radio-group class="d-flex flex-column text-start" (change)="changeOption(block.options,$event)">
+                                                            @for (option of block.options; track $index) {
 
+                                                                <mat-radio-button [checked]="option.activate" [value]="option">
+                                                                    @if(option.name){
+                                                                        {{option.name|translate}}
+                                                                    }
+                                                                </mat-radio-button>
+
+                                                            }
+                                                        </mat-radio-group>
+                                                     }
+
+                                                </mat-card-content>
+                                            </mat-card>
+                                        </div>
+                                    }
+                                </div>
+                                <mat-divider class="my-4"></mat-divider>
+                            }
+                        </div>
+                    </div>
+
+                </div>
+                }
+                
             </div>
 
             }
         </div>
-
     </div>
 </div>

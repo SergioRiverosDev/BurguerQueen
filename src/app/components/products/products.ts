@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { ActivatedRoute, Params, RouterLink } from '@angular/router';
 import { first, Observable } from 'rxjs';
 import { ProductModel } from '../../models/product.model';
@@ -12,6 +12,8 @@ import { TranslateModule } from '@ngx-translate/core';
   imports: [AsyncPipe, MatCardModule, TranslateModule, RouterLink],
   templateUrl: './products.html',
   styleUrl: './products.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
 export class Products {
 
