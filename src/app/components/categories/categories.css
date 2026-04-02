@@ -6,3 +6,6 @@
 .card-style:hover mat-card {
   transform: scale(1.05) translateZ(0);
 }
+.card-subtittle{
+  background-color: var(--color-subtittle);
+}

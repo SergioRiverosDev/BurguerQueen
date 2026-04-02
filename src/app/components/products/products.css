@@ -6,3 +6,18 @@
 .card-style:hover mat-card {
   transform: scale(1.05) translateZ(0);
 }
+.card-subtittle{
+  background-color: var(--color-subtittle);
+}
+.card-text{
+  color: var(--color-text-1);
+}
+.color-button{
+  background: white;
+  border: 1px solid var(--color-tittle);
+  color: var(--color-tittle);
+}
+.color-button:hover{
+  background: var(--color-tittle);
+  color: var(--color-surface);
+}

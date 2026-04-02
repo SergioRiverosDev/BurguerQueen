@@ -5,7 +5,8 @@
   --color-surface: #EFEDEA;
   --color-subtittle: #431407;
   --color-tittle: #DC2626;
-  --color-text: #C9B0A9;
+  --color-text-1: #6D524B;
+  --color-text-2: #C9B0A9;
   --color-button: #DC2626;
 }
 
@@ -27,4 +28,5 @@ html body {
     margin-bottom: 60px;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     padding-top: 0.5px;
+    background: var(--color-surface);
 }

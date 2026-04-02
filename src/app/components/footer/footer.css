@@ -1,3 +1,4 @@
 .footer{
   background-color: var(--color-tittle);
+  font-family: var(--font-heading);
 }

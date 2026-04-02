@@ -2,7 +2,7 @@
     <div class="col-12">
 
         <div class="col-12 mt-3">
-            <a class="btn btn-outline-primary mb-2 d-none d-lg-block" style="width: 100px; text-decoration: none; position: absolute;"
+            <a class="btn color-button mb-2 d-none d-lg-block" style="width: 100px; text-decoration: none; position: absolute;"
                 routerLink="/categories">
                 <ion-icon class="pt-1" name="arrow-back-outline"></ion-icon>
                 {{'label.back'|translate }}
@@ -19,11 +19,11 @@
 
                     <img mat-card-image class="p-4 img-card" [src]="'/img/products/'+product.img" [alt]="product.name">
 
-                    <mat-card-content class="bg-primary rounded-bottom text-white p-2 mt-auto">
+                    <mat-card-content class="card-subtittle rounded-bottom text-white p-2 mt-auto">
                         <h6 class=" text-center">
                             {{ product.name | translate }}
                         </h6>
-                        <h5 class="bg-white text-primary rounded align-content-center pt-1"> {{product.price}} €</h5>
+                        <h5 class="bg-white card-text rounded align-content-center pt-1"> {{product.price}} €</h5>
                     </mat-card-content>
 
                 </mat-card>
