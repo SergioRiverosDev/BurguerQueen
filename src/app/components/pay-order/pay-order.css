@@ -1,0 +1,24 @@
+.color-button-next{
+  background: white;
+  border: 1px solid var(--color-tittle);
+  color: var(--color-tittle);
+}
+.color-button-next:hover{
+  background: var(--color-tittle);
+  color: var(--color-surface);
+}
+
+::ng-deep .mat-step-header .mat-step-icon {
+  background-color: #431407 !important;
+}
+
+::ng-deep .mat-step-header .mat-step-label.mat-step-label-active {
+  color: #431407 !important;
+}
+
+@media (max-width: 768px) {
+  .color-button-next{
+  background: var(--color-tittle);
+  color: var(--color-surface);
+}
+}

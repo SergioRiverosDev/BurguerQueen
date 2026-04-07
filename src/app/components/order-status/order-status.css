@@ -1,0 +1,75 @@
+td,
+th {
+  text-align: center;
+}
+
+.color-button {
+  background: var(--color-tittle);
+  color: var(--color-surface);
+}
+
+.color-button:hover {
+  transition: all 0.2s ease-in-out;
+  filter: drop-shadow(2px 4px 6px rgba(224, 102, 102, 0.74));
+}
+
+/* --------------------------------------------- */
+
+/* cel */
+.table-responsive {
+  width: 100%;
+}
+
+.full-width-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Ajuste de columnas */
+.mat-column-name {
+  width: 40%;
+  word-break: break-word;
+}
+
+.mat-column-price {
+  width: 20%;
+  text-align: center;
+}
+
+.mat-column-quantity {
+  width: 20%;
+  text-align: center;
+}
+
+.mat-column-total {
+  width: 20%;
+  text-align: center;
+}
+
+/* cel */
+@media (max-width: 768px) {
+
+  th h4 {
+    font-size: 15px;
+
+  }
+
+  td {
+    font-size: 14px;
+  }
+
+  .btn {
+    padding: 0px 2px !important;
+    font-size: 12px;
+  }
+
+  ion-icon {
+    font-size: 16px;
+  }
+  .quantityProducts button{
+    display: none;
+}
+.quantityProducts button {
+  flex-shrink: 0;
+}
+}

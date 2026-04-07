@@ -5,6 +5,7 @@
   left: 0;
   width: 100%;
   z-index: 9999;
+  overflow: hidden;
 }
 .logo {
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
@@ -12,5 +13,7 @@
 .icon{
   color: white;
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
-
+}
+.icon:hover{
+  filter: drop-shadow(0px 4px 8px rgba(255, 255, 255, 0.699));
 }
