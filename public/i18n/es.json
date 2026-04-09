@@ -65,5 +65,14 @@
     "label.add.product.success": "Se ha añadido el producto a la cesta",
     "label.payment.error": "Error al realizar el pago",
     "label.error": "Error",
-    "label.extras": "Extras"
+    "label.extras": "Extras",
+    "label.textB": "Las mejores hamburguesas artesanales, preparadas con ingredientes frescos y mucho amor.",
+    "label.tittleB": "Descubre el sabor que te conquista",
+    "label.btn.view":"Ver menú completo",
+    "label.btn.request":"Hacer pedido",
+    "label.text.banner":"Descubre una amplia variedad de opciones deliciosas para todos los gustos",
+    "text.categories":"Nuestras categorías",
+    "text.explore":"Explora Nuestro Menú",
+    "label.select.title": "¿Qué vas a pedir?",
+    "label.select.subtitle": "Selecciona el producto que deseas y agrégalo a tu pedido"
 }

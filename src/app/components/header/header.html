@@ -1,10 +1,11 @@
 <div class="row header">
     <div class="col-2 ps-4 logo">
-        <img [src]="'/img/flags/logo_app.png'" [alt]="'logo_app'" width="55px" height="55px" routerLink="/categories">
+        <img [src]="'/img/flags/logo_app.png'" [alt]="'logo_app'" width="55px" height="55px" (click)="goHome()">
     </div>
     <div class="col-10 d-flex justify-content-end align-items-center">
         @for (language of languages; track $index) {
             <img [src]="'/img/flags/'+language+'.png'" [alt]="language" width="32px" height="32px" class="me-2" (click)="changeLenguage(language)">
+             <!-- <ion-icon name="globe-outline"></ion-icon><p>{{language}}</p> -->
         }
         <mat-icon aria-hidden="false" [matBadge]="numProductSignal()" aria-label="Shopping cart" fontIcon="shopping_cart" routerLink="/pay-order" class="mx-3 icon"></mat-icon>
     </div>

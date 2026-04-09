@@ -59,11 +59,13 @@ export class Product {
           duration:5000
         }
      );
-    this.router.navigateByUrl('/categories');
+        this.router.navigate(['/'], { fragment: 'categories' });
+
   }
 
   goBack(){
     this.location.back();
+    
   } 
 
   oneLessProduct(){

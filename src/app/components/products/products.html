@@ -2,11 +2,18 @@
     <div class="col-12">
 
         <div class="col-12 mt-3">
-            <a class="btn color-button mb-2 d-none d-lg-block" style="width: 100px; text-decoration: none; position: absolute;"
-                routerLink="/categories">
+            <a class="btn color-button mb-2 d-none d-lg-block"
+                style="width: 100px; text-decoration: none; position: absolute;" (click)="goToCategories()">
                 <ion-icon class="pt-1" name="arrow-back-outline"></ion-icon>
                 {{'label.back'|translate }}
             </a>
+        </div>
+
+        <div class="row">
+            <div class="col-12 text-center py-3">
+                <p class="select-title">{{ 'label.select.title' | translate }}</p>
+                <p class="select-subtitle">{{ 'label.select.subtitle' | translate }}</p>
+            </div>
         </div>
 
         <div class="row justify-content-center">

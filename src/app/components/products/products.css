@@ -21,3 +21,19 @@
   background: var(--color-tittle);
   color: var(--color-surface);
 }
+
+.select-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--color-tittle); 
+  margin-bottom: 4px;
+  font-family: var(--font-heading);
+
+}
+
+.select-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  color: var(--color-subtittle);
+  font-weight: 300;
+}

@@ -1,17 +1,18 @@
 
 .app_header{
   background-color: var(--color-tittle);
-    position: fixed;
+     position: fixed;
     top: 0;
     width: 100%;
     height: 60px;
 }
 
-.app_content{
+.app_content {
     position: relative;
     height: calc(100% - 120px);
     overflow-x: hidden;
     overflow-y: auto;
+    padding-bottom: 60px;
 }
 
 .app_footer{
@@ -19,4 +20,5 @@
     bottom: 0;
     width: 100%;
     height: 60px;
-}
+} 
+

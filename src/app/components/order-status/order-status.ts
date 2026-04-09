@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 import { QuantityProductModel } from '../../models/quantity-product.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogExtras } from '../dialogs/dialog-extras/dialog-extras';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-order-status',
-  imports: [TranslateModule, MatTableModule, CalculateTotalPricePipe],
+  imports: [TranslateModule, MatTableModule, CalculateTotalPricePipe, CommonModule],
   templateUrl: './order-status.html',
   styleUrl: './order-status.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

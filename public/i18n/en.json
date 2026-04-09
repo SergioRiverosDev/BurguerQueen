@@ -65,5 +65,14 @@
     "label.add.product.success": "The product has been added to the basket",
     "label.payment.error": "Error processing the payment",
     "label.error": "Error",
-    "label.extras": "Extras"
+    "label.extras": "Extras",
+    "label.textB": "The best artisanal burgers, prepared with fresh ingredients and lots of love.",
+    "label.tittleB": "Discover the flavor that will win you over",
+    "label.btn.view":"See full menu",
+    "label.btn.request":"Place order",
+    "label.text.banner":"Discover a wide variety of delicious options for all tastes",
+    "text.categories":"Our categories",
+    "text.explore":"Explore Our Menu",
+    "label.select.title": "¿What are you ordering?",
+    "label.select.subtitle": "Select the product you want and add it to your order"
 }

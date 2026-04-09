@@ -1,15 +1,46 @@
-<div class="row pt-3">
+<div class="row">
     <div class="col-12">
-        
-        <div class="row justify-content-center">
+        <div class="background">
+
+            <div class=" information">
+                <div class="separation">
+                
+                    <p class="tittle">{{'label.tittleB'|translate}}</p>
+                    <p class="subtittle">{{'label.textB'|translate}}</p>
+                    <div class="buttons">
+                        <button (click)="scrollToCategories()" class="btn color-buttom-wiew me-2">{{'label.btn.view'|translate}}</button>
+                        <button (click)="placeOrder()" class="btn color-button-request m-2">{{'label.btn.request'|translate}}</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="banner">
+    <p>{{'label.text.banner'|translate}}</p>
+</div>
+<div class="row categories">
+    <div class="col-12" id="categoriesScroll">
+
+        <div class="row ">
+            <div class="d-flex flex-column justify-content-center align-items-center"> 
+                <p class="text-categories">{{'text.categories'|translate|uppercase}}</p>
+                <p class="text-explore">{{'text.explore'|translate}}</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center" >
 
             @if (categories$ | async; as categories) {
             @for (category of categories; track category._id) {
 
-                
-            <div class="col-lg-2 col-md-4 col-6 p-3 d-flex card-style">
 
-                <mat-card class="bg-white text-center w-100 h-100 " appearance="outlined" [routerLink]="['/products',category._id]">
+            <div class="col-lg-2 col-md-4 col-6 p-3 d-flex card-style" >
+
+                <mat-card class="bg-white text-center w-100 h-100 " appearance="outlined"
+                    [routerLink]="['/products',category._id]">
 
                     <img mat-card-image class="p-1 img-card" [src]="'/img/products/'+category.img"
                         [alt]="category.name">
