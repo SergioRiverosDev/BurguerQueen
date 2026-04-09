@@ -11,11 +11,34 @@
 
 .logo {
   filter: drop-shadow(2px 0px 0px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
 }
 .icon{
+  margin-top: 2px;
   color: white;
   filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+  cursor: pointer;
 }
 .icon:hover{
   filter: drop-shadow(0px 4px 8px rgba(255, 255, 255, 0.699));
+}
+.languageChange {
+  color: var(--color-surface);
+  margin-top: 5px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  -webkit-user-select: none;
+}
+
+.languageChange ion-icon{
+  font-size: 1.7rem;
+}
+.languageChange:hover {
+  background-color: var(--color-surface);
+  color: var(--color-tittle);
 }

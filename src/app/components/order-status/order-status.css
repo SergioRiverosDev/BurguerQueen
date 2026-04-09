@@ -12,6 +12,9 @@ th {
   transition: all 0.2s ease-in-out;
   filter: drop-shadow(2px 4px 6px rgba(224, 102, 102, 0.74));
 }
+.cursorTd{
+  cursor: pointer;
+}
 
 /* --------------------------------------------- */
 
@@ -44,6 +47,13 @@ th {
 .mat-column-total {
   width: 20%;
   text-align: center;
+}
+
+.productName {
+  align-content: center;
+  padding-left: 3px;
+  font-size: 1.2em;
+  color: #999999d5;
 }
 
 /* cel */

@@ -14,12 +14,16 @@
 
                     <ng-container matColumnDef="name">
                         <th mat-header-cell *matHeaderCellDef> <h4>{{'label.name'|translate}} </h4></th>
-                        <td mat-cell *matCellDef="let element"> {{element.product.name|translate}} </td>
+                        <td mat-cell *matCellDef="let element" [ngClass]="{'cursorTd':element.product.extras}"> {{element.product.name|translate}}
+                            @if(element.product.extras){
+                                <ion-icon class="productName" name="help-circle-outline"></ion-icon>
+                            }
+                        </td>
                     </ng-container>
 
                     <ng-container matColumnDef="price">
                         <th mat-header-cell *matHeaderCellDef> <h4>{{'label.price'|translate}}</h4> </th>
-                        <td mat-cell *matCellDef="let element"> {{element.product|calculateTotalPrice}} </td>
+                        <td mat-cell *matCellDef="let element" [ngClass]="{'cursorTd':element.product.extras}"> {{element.product|calculateTotalPrice}} </td>
                     </ng-container>
 
                     <ng-container matColumnDef="quantity">
@@ -33,7 +37,7 @@
 
                     <ng-container matColumnDef="total">
                         <th mat-header-cell *matHeaderCellDef> <h4>{{'label.total'|translate}}</h4> </th>
-                        <td mat-cell *matCellDef="let element"> {{element.product |calculateTotalPrice: element.quantity}} </td>
+                        <td mat-cell *matCellDef="let element" [ngClass]="{'cursorTd':element.product.extras}"> {{element.product |calculateTotalPrice: element.quantity}} </td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

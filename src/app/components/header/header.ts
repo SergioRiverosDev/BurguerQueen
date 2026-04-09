@@ -7,32 +7,33 @@ import { UserOrderService } from '../../services/user-order.service';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, MatIcon,MatBadge],
+  imports: [RouterLink, MatIcon, MatBadge],
   templateUrl: './header.html',
   styleUrl: './header.css',
-   schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class Header {
 
-  private traslateService = inject(TranslateService); 
+  private traslateService = inject(TranslateService);
   private userOrderService = inject(UserOrderService);
   private router = inject(Router);
 
-  public languages : string[]= ['en','es'];
+  public languages: string[] = ['en', 'es'];
+  public currentLang: string = 'es';
   public numProductSignal: Signal<number> = this.userOrderService.numProductsSignal;
 
-  goHome(){
-  const content = document.querySelector('.app_content') as HTMLElement;
+  goHome() {
+    const content = document.querySelector('.app_content') as HTMLElement;
     if (content) {
-    content.scrollTo({ top: 0, behavior: 'smooth' });
+      content.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  this.router.navigate(['/'], { replaceUrl: true });
+    this.router.navigate(['/'], { replaceUrl: true });
   }
 
-  changeLenguage(lenguage:string){
+  toggleLanguage() {
+    this.currentLang = this.currentLang === 'es' ? 'en' : 'es';
 
-    this.traslateService.use(lenguage);
-
+    this.traslateService.use(this.currentLang);
   }
 
 }
