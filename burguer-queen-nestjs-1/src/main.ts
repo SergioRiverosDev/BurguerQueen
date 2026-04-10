@@ -4,7 +4,17 @@ import { ValidationPipe } from '@nestjs/common';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { cors: true });
+  /* const app = await NestFactory.create(AppModule, { cors: true }); */
+  const app = await NestFactory.create(AppModule);
+  
+  app.enableCors({
+    origin: [
+      'http://localhost:4200',
+      'https://burguer-queen-six.vercel.app/categories', 
+    ],
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    credentials: true,
+  });
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
   const config = new DocumentBuilder()
