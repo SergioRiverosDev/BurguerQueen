@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CreatePaymentIntentModel } from '../models/create-payment-intent.model';
 import { first } from 'rxjs';
