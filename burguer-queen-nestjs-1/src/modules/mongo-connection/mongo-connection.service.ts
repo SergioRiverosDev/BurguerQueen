@@ -12,7 +12,8 @@ export class MongoConnectionService {
 
     async createConnectionDB(){
 
-        const DB_URI = 'mongodb://localhost:27017/burguer-queen';
+        const DB_URI = process.env.MONGODB_URI ?? 'mongodb://localhost:27017/burguer-queen';
+        /* const DB_URI = 'mongodb://localhost:27017/burguer-queen'; */
         
         this.dbConnection = await createConnection(DB_URI);
 
