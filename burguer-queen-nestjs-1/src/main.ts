@@ -6,11 +6,11 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 async function bootstrap() {
   /* const app = await NestFactory.create(AppModule, { cors: true }); */
   const app = await NestFactory.create(AppModule);
-  
+
   app.enableCors({
     origin: [
       'http://localhost:4200',
-      'https://burguer-queen-six.vercel.app/categories', 
+      'https://burguer-queen-blush.vercel.app',
     ],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     credentials: true,
@@ -18,14 +18,14 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
   const config = new DocumentBuilder()
-  .setTitle('Burguer queen')
-  .setDescription('Documentación API')
-  .setVersion('1.0')
-  .addBearerAuth({
-    bearerFormat: 'JWT',
-    type: 'http'
-  }, 'jwt')
-  .build();
+    .setTitle('Burguer queen')
+    .setDescription('Documentación API')
+    .setVersion('1.0')
+    .addBearerAuth({
+      bearerFormat: 'JWT',
+      type: 'http'
+    }, 'jwt')
+    .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('doc', app, document);
 
