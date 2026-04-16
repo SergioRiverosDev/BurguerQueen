@@ -27,19 +27,19 @@
 }
 
 .separation {
-  width: 40%;
+  width: 45%;
 }
 
 .tittle {
   color: var(--color-surface);
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
 }
 
 .subtittle {
   color: var(--color-surface);
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .btn {
